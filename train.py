@@ -19,9 +19,12 @@ from unet import UNet
 from utils.data_loading import BasicDataset, CarvanaDataset
 from utils.dice_score import dice_loss
 
-dir_img = Path('/content/drive/MyDrive/aio-final-project/Dataset_Lane_Segmentation-main/train/')
-dir_mask = Path('/content/drive/MyDrive/aio-final-project/Dataset_Lane_Segmentation-main/trainanot/')
-dir_checkpoint = Path('./checkpoints/')
+# dir_img = Path('../lane detection/Dataset_Lane_Segmentation-main/train')
+# dir_mask = Path('../lane detection/Dataset_Lane_Segmentation-main/trainanot')
+# dir_checkpoint = Path('./checkpoints/')
+dir_img = Path('/content/drive/MyDrive/aio-final-project/Dataset_Lane_Segmentation-main/test/')
+dir_mask = Path('/content/drive/MyDrive/aio-final-project/Dataset_Lane_Segmentation-main/testanot/')
+dir_checkpoint = Path('/content/drive/MyDrive/aio-final-project/checkpoints-lane-detection/')
 
 
 def train_model(

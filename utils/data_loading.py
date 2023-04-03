@@ -11,6 +11,7 @@ from os.path import splitext, isfile, join
 from pathlib import Path
 from torch.utils.data import Dataset
 from tqdm import tqdm
+import sys
 
 
 def load_image(filename):
@@ -54,11 +55,13 @@ class BasicDataset(Dataset):
         #         p.imap(partial(unique_mask_values, mask_dir=self.mask_dir, mask_suffix=self.mask_suffix), self.ids),
         #         total=len(self.ids)
         #     ))
-        unique = list(np.array([0, 1, 2]) for i in range(10))
+        #unique = list(np.array([0, 1, 2]) for i in range(10))
 
-        self.mask_values = list(sorted(np.unique(np.concatenate(unique), axis=0).tolist()))
+        self.mask_values = [[0, 0, 0], [0, 255, 255], [128, 0, 128]]
+
+        #self.mask_values = list(sorted(np.unique(np.concatenate(unique), axis=0).tolist()))
         logging.info(f'Unique mask values: {self.mask_values}')
-
+        
     def __len__(self):
         return len(self.ids)
 
